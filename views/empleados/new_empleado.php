@@ -10,7 +10,7 @@
             </v-toolbar-title>
 
           </v-toolbar><br>
-          <v-flex xs12 sm11 offset-sm2>
+          <v-flex xs12 sm10 offset-sm1>
                   <v-card>
                     <v-toolbar color="red darken-3" dark>
                         <v-toolbar-title>Nuevo Empleado
