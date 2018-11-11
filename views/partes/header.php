@@ -9,6 +9,7 @@
      <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
     <title>Gasolinera Puma El Triunfo</title>
     <link rel="stylesheet" href="assets/css/icon.css">
+      <link rel="stylesheet" href="assets/css/personal.css">
     <link rel="stylesheet" href="assets/css/vuetify.min.css">
   </head>
   <body>
