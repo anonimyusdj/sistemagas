@@ -10,6 +10,16 @@
     <title>Gasolinera Puma El Triunfo</title>
     <link rel="stylesheet" href="assets/css/icon.css">
       <link rel="stylesheet" href="assets/css/personal.css">
-    <link rel="stylesheet" href="assets/css/vuetify.min.css">
+    <link rel="stylesheet" href="assets/css/materialize.min.css">
   </head>
   <body>
+    <nav>
+      <div class="nav-wrapper teal darken-4">
+        <a href="#" class="brand-logo"><img src="assets\multimedia\imagenes\pumalogo.png" style="width:200px; height:60px;" class="responisve-img"></a>
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
+          <li><a href="sass.html">Sass</a></li>
+          <li><a href="badges.html">Components</a></li>
+          <li><a href="collapsible.html">JavaScript</a></li>
+        </ul>
+      </div>
+    </nav>
