@@ -28,5 +28,6 @@
 <script src="assets/js/materialize.min.js"></script>
 <script src="assets/js/app.js"></script>
 <script src="assets/js/vue-resource.min.js"></script>
+<script src="assets\js\jquery.mask.js" charset="utf-8"></script>
 </body>
 </html>
