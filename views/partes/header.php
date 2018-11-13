@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es" dir="ltr">
+<html lang="es" dir="ltr" ng-app="puma">
   <head>
     <meta http-equiv="Expires" content="0">
     <meta http-equiv="Last-Modified" content="0">

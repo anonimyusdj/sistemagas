@@ -1,0 +1,9 @@
+Options All -Indexes
+RewriteEngine On
+ErrorDocument 404 /index.php?c=index&a=error404
+
+RewriteRule ^home/?$ index.php
+
+
+RewriteRule ^obtenerCargos/?$ index.php?c=cargos&a=listarCargos
+RewriteRule ^guardarEmpleado/?$ index.php?c=empleados&a=guardarEmpleado

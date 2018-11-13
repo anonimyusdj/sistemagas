@@ -11,6 +11,6 @@
       return $pdo;
     }
   }
-Database::conectar();
-echo "Conectado a la BD";
+/*Database::conectar();
+echo "Conectado a la BD";*/
 ?>

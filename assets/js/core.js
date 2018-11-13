@@ -1,0 +1,214 @@
+var app=angular.module("system",[]);
+app.factory("compartir",function(){
+    return{
+        carrera:''
+    }
+});
+app.controller("index",function($scope){
+    $scope.titulo="Innovation System";
+    $scope.foto="assets/multimedia/imagenesSistema/estudiante_Hombre-01.png";
+});
+
+app.controller("mensajes",function($scope,$http){
+    $scope.msjadd=function(){
+        $http.get("assets/json/mensajes.json").then(function(response){
+
+            $scope.ms=response.data.mensajes;
+            console.log($scope.ms.rgadd);
+        });
+    }
+});
+
+app.controller("infopersonal",function($scope,$http){
+    $scope.validi=function(){
+        if($scope.pnombre == ""){
+            console.log("campo Nombre Requerido");
+        }
+    }
+    $scope.insertarInfo=function(){
+       $http.get("opciones.php",{params:{
+          'opcion':'insertar',
+          'table':'infopersonal',
+          'nombre':$scope.pnombre,
+          'apellido':$scope.papellido,
+          'direccion':$scope.pdireccion,
+          'telefono':$scope.ptelefono,
+          'sexo':$scope.psexo,
+          'correo':$scope.pcorreo
+       }}).then(function(response){
+            console.log(response.data)
+       });
+    }
+});
+app.controller("cargos",function($scope,$http){
+    $scope.insertarCargo=function(){
+        $http.get("opciones.php",{params:{
+            'opcion':'insertar',
+            'table':'cargos',
+            'nombre':$scope.cnombre
+        }}).then(function(response){
+            $scope.status=response.data;
+            if($scope.status.estado===1){
+                /*$.getJSON("assets/json/mensajes.json",function(data){
+                    $scope.ms=data.mensajes;
+                    alert($scope.ms.rgadd);
+                });*/
+               $http.get("assets/json/mensajes.json").then(function(response){
+                    $scope.ms=response.data.mensajes;
+                    alert($scope.ms.rgadd);
+                });
+            }else{
+                $scope.ms=response.data;
+                alert($scope.ms.Error);
+            }
+            $scope.cnombre="";          
+        });  
+    };
+    $scope.listarCargo=function(){
+        $http.get("opciones.php",{params:{
+                'opcion':'listar',
+                'table':'cargos'
+        }}).then(function(response){
+            $scope.lscargos=response.data.resultado;
+            //console.log($scope.lscargos[1]);
+        });
+    }
+});
+
+app.controller("login",function($scope,$http){
+    $scope.iniciar=function(){
+        $http.get("opciones.php",{params:{
+                'opcion':'login',
+                'table':'login',
+                'usuario':$scope.user,
+                'contrasena':$scope.pass
+        }}).then(function(response){
+            windows.location(response.data);
+            
+        });
+    }
+});
+app.controller("carrera",function($scope,$http,compartir){
+    $scope.care=compartir;
+    $scope.insertarCarrera=function(){
+        $http.get("opciones.php",{params:{
+            'opcion':'insertar',
+            'table':'carrera',
+            'institucion':$scope.instCodigo,
+            'nombre':$scope.nombreCarrera
+        }}).then(function(response){
+            //console.log(response.data)
+            $scope.nombreCarrera=null;
+           $scope.listarCarrera();
+        });
+    };
+    $scope.listarCarrera=function(){
+        $http.get("opciones.php",{params:{
+            'opcion':'listar',
+            'table':'carrera'
+        }}).then(function(response){
+            $scope.lscarrera=response.data.resultado;
+            //console.log(response.data);
+        });
+    };
+   
+}); 
+
+app.controller("grupos",function($scope,$http,compartir){
+    $scope.cares=compartir;
+    $scope.insertarGrupos=function(){
+        $http.get("opciones.php",{params:{
+            'opcion':'insertar',
+            'table':'grupos',
+            'carrera':$scope.cares.carrera,
+            'seccion':$scope.seccion,
+            'anio':$scope.anio,
+            'capacidad':$scope.capacidad
+        }}).then(function(response){
+           //console.log(response.data);
+            $scope.status=response.data;
+            if($scope.status.estado===1){
+               $http.get("assets/json/mensajes.json").then(function(response){
+                    $scope.ms=response.data.mensajes;
+                    alert($scope.ms.rgadd);
+                });
+            }else{
+                $scope.ms=response.data;
+                alert($scope.ms.Error);
+            }
+            $scope.carrera=null;
+            $scope.seccion=null;
+            $scope.anio=null;
+            $scope.capacidad=null;
+            $scope.listarGrupos();
+        });
+    };
+    $scope.listarGrupos=function(){
+        $http.get("opciones.php",{params:{
+            'opcion':'listar',
+            'table':'grupos'
+        }}).then(function(response){
+            $scope.lsGrupos=response.data.resultado;
+            //console.log(response.data);
+        });
+    };
+    $scope.buscarCarrera=function(){
+        $http.get("opciones.php",{params:{
+            'opcion':'buscar',
+            'table':'carrera',
+            'nombre':$scope.nombreCar
+        }}).then(function(response){
+            $scope.busCarrera=response.data.resultado;
+            console.log(response.data);
+        });
+    };
+    $scope.cambiacar = function(car){
+        $scope.nombreCar = car;
+        $scope.busCarrera = null;
+    };
+});
+
+app.controller("estudiantes",function($scope,$http){
+    $scope.listarEstudiantes=function(){
+        $http.get('opciones.php',{params:{
+            'opcion':'listar',
+            'table':'estudiantes'
+        }}).then(function(response){
+            $scope.lsEstudiantes=response.data.resultado;
+            //console.log(response.data);
+        });
+    };
+});
+
+app.controller("materias",function($scope,$http){
+    $scope.insertarMaterias=function(){
+        $http.get('opciones.php',{params:{
+            'opcion':'insertar',
+            'table':'materias',
+            'nombre':$scope.nombreMateria
+        }}).then(function(response){
+            $scope.status=response.data;
+            //console.log(response.data);
+            if($scope.status.estado===1){
+               $http.get("assets/json/mensajes.json").then(function(response){
+                    $scope.ms=response.data.mensajes;
+                    alert($scope.ms.rgadd);
+                });
+            }else{
+                $scope.ms=response.data;
+                alert($scope.ms.Error);
+            }
+            $scope.nombreMateria=null;
+            $scope.listarMaterias();
+        });
+    };
+    $scope.listarMaterias=function(){
+        $http.get('opciones.php',{params:{
+            'opcion':'listar',
+            'table':'materias'
+        }}).then(function(response){
+            $scope.lsMaterias=response.data.resultado;
+            //console.log(response.data);
+        });
+    };
+});

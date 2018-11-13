@@ -24,10 +24,11 @@
          </div>
        </footer>
 <script src="assets/js/jquery.min.js"></script>
-<script src="assets/js/vue.js"></script>
+<script src="assets/js/angular.min.js"></script>
+<script src="assets/js/angular-resource.min.js"></script>
 <script src="assets/js/materialize.min.js"></script>
 <script src="assets/js/app.js"></script>
-<script src="assets/js/vue-resource.min.js"></script>
-<script src="assets\js\jquery.mask.js" charset="utf-8"></script>
+<script src="assets/js/jquery.mask.js"></script>
+<script src="assets/js/css.js"></script>
 </body>
 </html>
