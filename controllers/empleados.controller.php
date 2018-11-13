@@ -11,11 +11,7 @@ class EmpleadosController{
   }
   public function guardarEmpleado(){
     $datos=new EmpleadosModel();
-<<<<<<< HEAD
     //echo "sexo:".$_REQUEST['sexo']."<br>";
-=======
-echo "sexo:".$_REQUEST['cargo'];
->>>>>>> e43cef91158037f984321dafdd4fac7a291e0a2b
     $datos->id_empleado="GPMEMP".$this->empleados->contar();
     $datos->nombres=$_REQUEST['nombre'];
     $datos->apellidos=$_REQUEST['apellido'];
