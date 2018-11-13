@@ -53,5 +53,28 @@
       }
 
     }
+
+    public function listarEmpleados(){
+      try {
+        $sql="SELECT * FROM empleados";
+        $stm=$this->conexion->prepare($sql);
+        $stm->execute();
+        $salida="";
+
+        while($rs=$stm->fetch(PDO::FETCH_ASSOC)){
+            if($salida != ""){
+              $salida .=",";
+            }
+            $salida .='{"codigo":"'.$rs['id_empleado'].'","nombres":"'.$rs['nombres'].'","apellidos":"'.$rs['apellidos'].'","direccion":"'.$rs['direccion'].'","telefono":"'.$rs['telefono'].'","dui":"'.$rs['dui'].'","nit":"'.$rs['nit'].'","sexo":"'.$rs['sexo'].'",';
+            $salida .='"cargo":"'.$rs['id_cargo'].'","foto":"'.$rs['foto_perfil'].'"}';
+        }
+        $salida='{"resultado":['.$salida.']}';
+        echo ($salida);
+      } catch (Exception $e) {
+          echo '{"resultado":"'.$e->getMessage().'"}';
+      }
+
+    }
+
   }
 ?>

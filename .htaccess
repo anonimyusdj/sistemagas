@@ -6,4 +6,6 @@ RewriteRule ^home/?$ index.php
 
 
 RewriteRule ^obtenerCargos/?$ index.php?c=cargos&a=listarCargos
+
 RewriteRule ^guardarEmpleado/?$ index.php?c=empleados&a=guardarEmpleado
+RewriteRule ^listarEmpleados/?$ index.php?c=empleados&a=listarEmpleados

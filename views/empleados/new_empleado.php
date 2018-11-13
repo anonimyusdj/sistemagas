@@ -19,7 +19,7 @@
                           <label for="apellido" data-error="Campo Requerido">Apellidos</label>
                         </div>
                         <div class="input-field col s12 m2">
-                          <select class="icons" ng-model="sexo">
+                          <select class="icons" name="sexo" ng-model="sexo">
                             <option value="" disabled selected>Seleccionar</option>
                             <option value="Masculino" class="circle">Masculino</option>
                             <option value="Femenino"  class="circle">Femenino</option>
@@ -48,9 +48,9 @@
                           <label for="nit" data-error="Campo Requerido">NIT</label>
                         </div>
                         <div class="input-field col s12 m3"  ng-init="getCargos()">
-                          <select class="icons" ng-model="cargo">
-                            <option value="" disabled selected>Seleccionar</option>
+                          <select class="icons" name="cargo" ng-model="cargo">
                             <?php
+                              echo "  <option value='' disabled selected>Seleccionar</option>";
                                 foreach( $this->cargos->getcargosphp() as $cargo):
                                   ?>
                                   <option value="<?php echo $cargo->id_cargo;?>"><?php echo $cargo->nombre_cargo;?></option>
@@ -104,5 +104,11 @@
               </div>
           </form>
       </div>
+  </div>
+  <div class="col s12 m3">
+
+  </div>
+  <div class="col s12 m9 card">
+      <?php require_once "views/empleados/view_empleados.php";?>
   </div>
 </div>
