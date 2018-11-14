@@ -9,6 +9,14 @@ app.controller("regEmpleado",function($scope,$http){
       $scope.cargos=response.data;
     });
   };
+  
+   $scope.getCargosID=function(id){
+    $http.get("obtenerCargosID",{params:{"id":id}}).then(function(response){
+      console.log(response.data);
+      $scope.cargosID=response.data;
+    });
+  };
+  
   $scope.listarEmpleados=function(){
     $http.get("listarEmpleados").then(function(response){
       //console.log(response.data);
