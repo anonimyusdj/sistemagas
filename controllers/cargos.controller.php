@@ -11,7 +11,7 @@ require_once "model/cargos.model.php";
       $this->cargos->getcargos();
     }
     public function listarCargosID(){
-      $this->cargos->getcargosid();
+      $this->cargos->getcargosid($_REQUEST['id']);
     }
   
   }
