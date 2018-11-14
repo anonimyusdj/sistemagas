@@ -8,7 +8,10 @@ require_once "model/cargos.model.php";
     }
 
     public function listarCargos(){
-      $this->cargos->getCargos();
+      $this->cargos->getcargos();
+    }
+    public function listarCargosID(){
+      $this->cargos->getcargosid();
     }
   
   }
