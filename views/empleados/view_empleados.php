@@ -26,7 +26,7 @@
           <td>{{e.dui}}</td>
           <td>{{e.nit}}</td>
           <td>{{e.sexo}}</td>
-          <td ng-init="getCargosID(e.cargo)" >{{e.cargo}}</td>
+          <td ng-init="getCargosID(e.cargo)">{{e.cargo}}</td>
           <td><a href=""><i class="material-icons fixed">edit</i></a></td>
           <td><a href=""><i class="material-icons fixed">delete</i></a></td>
           <td><a href=""><i class="material-icons fixed">info</i></a></td>
