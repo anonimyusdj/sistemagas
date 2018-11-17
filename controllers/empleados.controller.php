@@ -8,7 +8,7 @@ class EmpleadosController{
   public function __construct(){
     $this->empleados=new EmpleadosModel();
     $this->cifrar=new Cifrado();
-  }
+  } 
   public function guardarEmpleado(){
     $datos=new EmpleadosModel();
     //echo "sexo:".$_REQUEST['sexo']."<br>";

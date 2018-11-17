@@ -3,20 +3,24 @@ var app=angular.module("puma",[]);
 app.controller("regEmpleado",function($scope,$http){
   $scope.sexo="";
   $scope.cargo="";
+
   $scope.getCargos=function(){
     $http.get("obtenerCargos").then(function(response){
     //  console.log(response.data);
       $scope.cargos=response.data;
     });
   };
-  
-   $scope.getCargosID=function(id){
-    $http.get("obtenerCargosID",{params:{"id":id}}).then(function(response){
+
+   $scope.getCargosID=function(){
+     console.log($scope.cargo);
+     /*$http.get("obtenerCargosID",{params:
+       {"id":id}
+     }).then(function(response){
       console.log(response.data);
       $scope.cargosID=response.data;
-    });
+    });*/
   };
-  
+
   $scope.listarEmpleados=function(){
     $http.get("listarEmpleados").then(function(response){
       //console.log(response.data);

@@ -17,7 +17,7 @@
       </thead>
 
       <tbody>
-        <tr ng-repeat="e in listaEmpleados" style="font-size:12px;">
+        <tr ng-repeat="e in listaEmpleados" style="font-size:12px; ng-init="cargo=e.cargo"">
           <td>{{e.codigo}}</td>
           <td>{{e.nombres}}</td>
           <td>{{e.apellidos}}</td>
@@ -26,7 +26,7 @@
           <td>{{e.dui}}</td>
           <td>{{e.nit}}</td>
           <td>{{e.sexo}}</td>
-          <td ng-init="getCargosID(e.cargo)">{{e.cargo}}</td>
+          <td  ng-init="getCargosID()">{{e.cargo}}</td>
           <td><a href=""><i class="material-icons fixed">edit</i></a></td>
           <td><a href=""><i class="material-icons fixed">delete</i></a></td>
           <td><a href=""><i class="material-icons fixed">info</i></a></td>

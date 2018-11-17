@@ -28,7 +28,7 @@
       } catch (Exception $e) {
         echo "{'resultado':{'".$e->getMessage()."'}}";
       }
-
+ 
     }
     public function getcargosphp(){
       try {
@@ -47,7 +47,7 @@
           $stm= $this->conexion->prepare($sql);
           $stm->execute(array($id));
           $salida="";
-        
+
           while($rs=$stm->fetch(PDO::FETCH_ASSOC)){
              if($salida != ""){
               $salida .= ",";
@@ -56,8 +56,8 @@
           }
           $salida='{"resultado":['.$salida.']}';
           echo ($salida);
-            
-     
+          echo $id;
+
       } catch (Exception $e) {
         echo "{'resultado':{'".$e->getMessage()."'}}";
       }
