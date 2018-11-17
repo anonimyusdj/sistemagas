@@ -1,8 +1,15 @@
 var app=angular.module("puma",[]);
-
-app.controller("regEmpleado",function($scope,$http){
+app.factory("compartir",function(){
+    return{
+        cargo:'',
+        grupo:'',
+        docente:'',
+        materia:''
+    }
+});
+app.controller("regEmpleado",function($scope,$http,compartir){
   $scope.sexo="";
-  $scope.cargo="";
+  $scope.cargo=compartir;
 
   $scope.getCargos=function(){
     $http.get("obtenerCargos").then(function(response){
@@ -12,7 +19,7 @@ app.controller("regEmpleado",function($scope,$http){
   };
 
    $scope.getCargosID=function(){
-     console.log($scope.cargo);
+     console.log($scope.cargo.cargo);
      /*$http.get("obtenerCargosID",{params:
        {"id":id}
      }).then(function(response){
