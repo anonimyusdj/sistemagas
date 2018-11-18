@@ -10,3 +10,6 @@ RewriteRule ^obtenerCargosID/?$ index.php?c=cargos&a=listarCargosID
 
 RewriteRule ^guardarEmpleado/?$ index.php?c=empleados&a=guardarEmpleado
 RewriteRule ^listarEmpleados/?$ index.php?c=empleados&a=listarEmpleados
+
+
+RewriteRule ^login/?$ index.php?C=login&a=login
