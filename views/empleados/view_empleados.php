@@ -17,7 +17,7 @@
       </thead>
 
       <tbody>
-        <tr ng-repeat="e in listaEmpleados" style="font-size:12px; ng-init="cargoid.cargo=e.cargo">
+        <tr ng-repeat="e in listaEmpleados" style="font-size:12px; ng-init="cargoid.cargo='{{e.cargo}}'">
           <td>{{e.codigo}}</td>
           <td>{{e.nombres}}</td>
           <td>{{e.apellidos}}</td>
