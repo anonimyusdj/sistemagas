@@ -9,7 +9,7 @@ app.factory("compartir",function(){
 });
 app.controller("regEmpleado",function($scope,$http,compartir){
   $scope.sexo="";
-  $scope.cargo=compartir;
+  $scope.cargoid=compartir;
 
   $scope.getCargos=function(){
     $http.get("obtenerCargos").then(function(response){
@@ -19,7 +19,7 @@ app.controller("regEmpleado",function($scope,$http,compartir){
   };
 
    $scope.getCargosID=function(){
-     console.log($scope.cargo.cargo);
+     console.log($scope.cargoid.cargo);
      /*$http.get("obtenerCargosID",{params:
        {"id":id}
      }).then(function(response){
