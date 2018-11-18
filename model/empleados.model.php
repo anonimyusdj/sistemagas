@@ -1,6 +1,7 @@
 <?php
+require_once "model/cargos.model.php";
   class EmpleadosModel{
-
+    private $cargo;
     private $conexion;
     public $id_empleado;
     public $nombres;
@@ -18,6 +19,7 @@
 
     public function __construct(){
       $this->conexion=Database::conectar();
+      $this->cargo=new CargosModel();
     }
     public function contar(){
         try{
@@ -65,8 +67,9 @@
             if($salida != ""){
               $salida .=",";
             }
+
             $salida .='{"codigo":"'.$rs['id_empleado'].'","nombres":"'.$rs['nombres'].'","apellidos":"'.$rs['apellidos'].'","direccion":"'.$rs['direccion'].'","telefono":"'.$rs['telefono'].'","dui":"'.$rs['dui'].'","nit":"'.$rs['nit'].'","sexo":"'.$rs['sexo'].'",';
-            $salida .='"cargo":"'.$rs['id_cargo'].'","foto":"'.$rs['foto_perfil'].'"}';
+            $salida .='"cargo":"'.$this->cargo->getcargosname($rs['id_cargo']).'","foto":"'.$rs['foto_perfil'].'"}';
         }
         $salida='{"resultado":['.$salida.']}';
         echo ($salida);

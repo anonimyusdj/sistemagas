@@ -18,20 +18,21 @@ app.controller("regEmpleado",function($scope,$http,compartir){
     });
   };
 
-   $scope.getCargosID=function(){
+/*   $scope.getCargosID=function(id){
      console.log($scope.cargoid.cargo);
-      
-     /*$http.get("obtenerCargosID",{params:
+     console.log(id);
+     $http.get("obtenerCargosID",{params:
        {"id":id}
      }).then(function(response){
       console.log(response.data);
+       console.log(id);
       $scope.cargosID=response.data;
-    });*/
-  };
+    });
+  };*/
 
   $scope.listarEmpleados=function(){
     $http.get("listarEmpleados").then(function(response){
-      //console.log(response.data);
+      console.log(response.data);
       $scope.listaEmpleados=response.data.resultado;
     });
   };

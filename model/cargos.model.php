@@ -28,7 +28,7 @@
       } catch (Exception $e) {
         echo "{'resultado':{'".$e->getMessage()."'}}";
       }
- 
+
     }
     public function getcargosphp(){
       try {
@@ -56,7 +56,31 @@
           }
           $salida='{"resultado":['.$salida.']}';
           echo ($salida);
-          echo $id;
+          //echo $id;
+
+      } catch (Exception $e) {
+        echo "{'resultado':{'".$e->getMessage()."'}}";
+      }
+
+    }
+
+    public function getcargosname($id){
+      try {
+          $sql="SELECT * FROM cargos where id_cargo=?";
+          $stm= $this->conexion->prepare($sql);
+          $stm->execute(array($id));
+          //$salida="";
+
+          while($rs=$stm->fetch(PDO::FETCH_ASSOC)){
+            /* if($salida != ""){
+              $salida .= ",";
+            }
+            $salida .= '{"codigo":"'.$rs['id_cargo'].'","nombre":"'.$rs['nombre_cargo'].'","nivel":"'.$rs['nivel'].'","fecha":"'.$rs['fecha_creacion'].'"}';
+**/         $salida=$rs['nombre_cargo'];
+          }
+          //$salida='{"resultado":['.$salida.']}';
+          return $salida;
+          //echo $id;
 
       } catch (Exception $e) {
         echo "{'resultado':{'".$e->getMessage()."'}}";
