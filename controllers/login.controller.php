@@ -11,7 +11,8 @@ class LoginController{
     $datos=new LoginModel();
     $datos->usuario=$_REQUEST['usuario'];
     $datos->contrasena=$_REQUEST['pass'];
-    
+    echo $datos->usuario;
+    echo $datos->contrasena;
     $this->login->login($datos);
   }
 }
