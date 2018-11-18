@@ -1,7 +1,7 @@
 <div class="row center">
   <div class="col s12 m4"></div>
   <div class="col s12 m4 l4 card center">
-    <form class="col s12">
+    <form class="col s12" action="login" method="post">
 
           <div class="row">
             <div class="col s12 m3"></div>
@@ -27,7 +27,7 @@
             </div>
           </div>
           <div class="card-action">
-              <button type="button" class="btn" name="button">Ingresar</button>
+              <button type="submit" class="btn" name="button">Ingresar</button>
             </div>
 
         </form>
