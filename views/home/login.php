@@ -23,7 +23,7 @@
             <div class="input-field col s12 m12">
               <i class="material-icons prefix">lock</i>
               <input id="pass" type="password" name="pass" class="validate">
-              <label for="pass">Telephone</label>
+              <label for="pass">Contraseña</label>
             </div>
           </div>
           <div class="card-action">
