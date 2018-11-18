@@ -20,6 +20,7 @@ app.controller("regEmpleado",function($scope,$http,compartir){
 
    $scope.getCargosID=function(){
      console.log($scope.cargoid.cargo);
+       alert($scope.cargoid.cargo);
      /*$http.get("obtenerCargosID",{params:
        {"id":id}
      }).then(function(response){
