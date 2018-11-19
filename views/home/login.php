@@ -27,7 +27,7 @@
             </div>
           </div>
           <div class="card-action">
-              <button type="submit" class="btn" name="button">Ingresar</button>
+              <button type="submit" class="btn red darken-3" name="button">Ingresar</button>
             </div>
 
         </form>
