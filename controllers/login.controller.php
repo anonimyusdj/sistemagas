@@ -7,6 +7,11 @@ class LoginController{
     $this->login=new LoginModel();
   }
   
+  public function master(){
+    require_once "views/partes/header.php";
+    require_once "views/master/home.php";
+  }
+  
   public function login(){
     $datos=new LoginModel();
     $datos->usuario=$_REQUEST['usuario'];
