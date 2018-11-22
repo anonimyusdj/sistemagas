@@ -4,7 +4,7 @@
     <form>
       <div class="row">
        <div class="input-field col s12 m4">
-        <input id="preCompra" type="number" class="validate" ng-model="preCompra" step="0.001">
+        <input id="preCompra" type="number" class="validate" ng-model="preCompra | number : 3">
         <label for="preCompra">Precio de Compra</label>
       </div>
       </div>
