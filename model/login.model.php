@@ -21,7 +21,7 @@ require_once "model/encript.php";
           $login->execute(array($user,$pass));
           $rs=$login->fetch(PDO::FETCH_ASSOC);
         if(count($rs)>0 && ($pass==$rs['contrasena'])){
-          echo "<script>alert('Hola Bienvenido ".$rs['nombres']."');</script>";
+          echo "<script>alert('Hola Bienvenido ".$rs['nombres']."'); locacion.href='master'</script>";
         }
       } catch (Exception $e) {
         echo $e->getMessage();
