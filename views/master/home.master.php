@@ -1,4 +1,4 @@
-<div class="row">
+<div class="row" ng-controller="factura">
   <div class="col s12 m2"></div>
   <div class="col s12 m6 card">
     <form>
