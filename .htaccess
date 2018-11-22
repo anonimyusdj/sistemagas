@@ -13,5 +13,7 @@ RewriteRule ^listarEmpleados/?$ index.php?c=empleados&a=listarEmpleados
 
 
 RewriteRule ^login/?$ index.php?c=login&a=login
-RewriteRule ^master/?$ index.php?c=login&a=master
+
 RewriteRule ^encargado/?$ index.php?c=login&a=ecargado
+
+RewriteRule ^master/?$ index.php?c=master&a=home
