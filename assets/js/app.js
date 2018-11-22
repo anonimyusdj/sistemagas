@@ -54,6 +54,6 @@ app.controller("regEmpleado",function($scope,$http,compartir){
   };
 });
 
-app.controller("factura",funtion($scope,$http){
+app.controller("factura",function($scope,$http){
     $scope.precompra=3.10;
 });
