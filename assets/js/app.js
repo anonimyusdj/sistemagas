@@ -56,4 +56,12 @@ app.controller("regEmpleado",function($scope,$http,compartir){
 
 app.controller("factura",function($scope,$http){
     $scope.preCompra=3.100;
+    $scope.correlativot="00005";
+    $scope.buscar=function(busqueda){
+      if(busqueda=="edgar"){
+        $scope.nombre="edgar";
+        $scope.apellido="Guzman";
+        $scope.direccion="triunfo";
+      }
+    }
 });
