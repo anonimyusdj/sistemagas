@@ -30,6 +30,7 @@
 <script src="assets/js/app.js"></script>
 <script src="assets/js/jquery.mask.js"></script>
 <script src="assets/js/css.js"></script>
+<script src="assets/js/toastr.min.js"></script>
 <!--script src="assets/js/picker.js"></script>
 <script src="assets/js/picker.date.js"></script>
 <script src="assets/js/picker.time.js"></script-->
