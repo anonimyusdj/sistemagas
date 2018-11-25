@@ -26,12 +26,12 @@
             <input ng-if="tipo=='3'" id="correlativo" type="text" class="validate" ng-model="correlativoc" placeholder="Credito" disabled>
         </div>
         <div class="input-field col s12 m2">
-
-            <a>FECHA: <?php
-              $hoy = getdate();
-              $fecha=$hoy['mday']."/".$hoy['mon']."/".$hoy['year'];
-              echo $fecha;
-              ?></a>
+          <input type="text" class="datepicker" ng-model="fecha" value="<?php
+          /*  $hoy = getdate();
+            $fecha=$hoy['year']."/".$hoy['mon']."/".$hoy['mday'];
+            echo $fecha;*/
+            ?>">
+          {{fecha}}
         </div>
       <div class="col s12 m12"></div>
           <div class="input-field col s4">
