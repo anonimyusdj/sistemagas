@@ -4,12 +4,12 @@
     <form>
       <div class="row">
 
-        <div class="input-field col s12 m6">
+        <div class="input-field col s12 m4">
             <i class="material-icons prefix">search</i>
             <input id="buscar" type="text" class="validate" ng-model="busqueda" ng-change="buscar(busqueda)">
             <label for="buscar">Buscar Cliente</label>
         </div>
-        <div class="input-field col s12 m4">
+        <div class="input-field col s12 m3">
           <select ng-model="tipo">
             <option value="" disabled selected>Seleccionar</option>
             <option value="1">Ticket</option>
@@ -24,6 +24,14 @@
             <input ng-if="tipo=='1'" id="correlativo" type="text" class="validate" ng-model="correlativot" placeholder="Ticket" disabled>
             <input ng-if="tipo=='2'" id="correlativo" type="text" class="validate" ng-model="correlativof" placeholder="Consumidor" disabled>
             <input ng-if="tipo=='3'" id="correlativo" type="text" class="validate" ng-model="correlativoc" placeholder="Credito" disabled>
+        </div>
+        <div class="input-field col s12 m2">
+
+            <a>FECHA: <?php
+              $hoy = getdate();
+              $fecha=$hoy['mday']."/".$hoy['mon']."/".$hoy['year'];
+              echo $fecha;
+              ?></a>
         </div>
       <div class="col s12 m12"></div>
           <div class="input-field col s4">
