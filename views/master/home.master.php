@@ -54,7 +54,8 @@
   </div>
 </div>
 <script>
- toastr.options = {toastr.options = { "closeButton":true, "progressBar": true};
- 
-  toastr.success("Hola, bienvenido al sistema!","Sistema Web");
+  $(document).ready(function() {
+    toastr.options = {toastr.options = { "closeButton":true, "progressBar": true};
+    toastr.success("Hola, bienvenido al sistema!","Sistema Web");
+  });
 </script>
