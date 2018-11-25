@@ -54,5 +54,7 @@
   </div>
 </div>
 <script>
+   $(window).load(function() {
     toastr.success("Hola, bienvenido al sistema!","Sistema Web");
+   });
 </script>
