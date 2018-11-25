@@ -53,3 +53,6 @@
     </form>
   </div>
 </div>
+<script>
+  toastr.success("Hola, bienvenido al sistema!","Sistema Web");
+</script>
